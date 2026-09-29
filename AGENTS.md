@@ -57,7 +57,10 @@
 - ✅ 2026-09-29 M0-2：docs/ 拷入《鸿蒙App开发指南.md》《鸿蒙专注App调查报告.md》；建立本 AGENTS.md
 - ✅ 2026-09-29 M0-3：UI 骨架完成——EntryAbility 沉浸式（异步 then 链 + 安全区高度入 AppStorage + 深浅色状态栏图标）、Navigation + 路由表四页（Home 双 Tab / SceneEdit / Stats / Settings，占位）、公共 PageTitleBar（chevron_left 48vp 热区）、深浅色全资源色板（phase_0-5 阶段色 + micro_break）
 - ✅ 2026-09-29 M0-4：CompileArkTS + PackageHap 全过；**SignHap 失败（预期内）**：debug profile 绑定旧包名 com.example.wakeloop，hvigor 校验 bundleName 不匹配即拒签。⚠️ 待用户在 DevEco → File → Project Structure → Signing Configs 点 Fix 重新自动签名（唯一阻塞项，不影响 M1 单测/编译验证）
-- ⬜ M1-M8：见方案文档 §6 实施路线
+- ✅ 2026-09-29 M1：计时内核完成——common/Types（Scene/Phase/SessionResult）+ model/SceneTemplates（6 内置模板）+ engine/LoopEngine（墙钟锚点状态机：挂起跨阶段追赶/暂停冻结吸收/微休息精确解冻/随机唤醒相对增量排程 WAKE_GRACE=30s/快照恢复/跳过记账），**17 个本地单测全过**（覆盖追赶/暂停/微休/快照/跳过/无限循环/事件）
+  - 踩坑：ArkTS 枚举收窄——`if (this.status !== Running) return` 会把后续 `=== Completed` 判为 no overlap 编译错；用 `statusNow()` 访问器破除收窄
+  - 设计说明：随机唤醒排程并入 LoopEngine（计划中的 RandomWakeScheduler 独立类因状态强耦合引擎而取消，降低复杂度）；RandomWakeScheduler 独立类因状态强耦合引擎而取消；事件带 atMs 精确边界，服务层按迟到量决定是否补播
+- ⬜ M2-M8：见方案文档 §6 实施路线
 
 ## 7. 文档维护纪律（必须遵守）
 
