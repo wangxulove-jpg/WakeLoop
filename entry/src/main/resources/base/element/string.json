@@ -1,0 +1,56 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "多场景循环计时工具"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "WakeLoop 主能力"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "WakeLoop"
+    },
+    {
+      "name": "tab_running",
+      "value": "运行"
+    },
+    {
+      "name": "tab_scenes",
+      "value": "场景"
+    },
+    {
+      "name": "title_stats",
+      "value": "统计"
+    },
+    {
+      "name": "title_settings",
+      "value": "设置"
+    },
+    {
+      "name": "title_scene_edit",
+      "value": "编辑场景"
+    },
+    {
+      "name": "running_empty_hint",
+      "value": "暂无运行中的循环\n去「场景」页选一个开始吧"
+    },
+    {
+      "name": "scenes_empty_hint",
+      "value": "场景库建设中（M2 实现）"
+    },
+    {
+      "name": "stats_empty_hint",
+      "value": "统计功能建设中（M6 实现）"
+    },
+    {
+      "name": "settings_empty_hint",
+      "value": "设置功能建设中"
+    },
+    {
+      "name": "scene_edit_empty_hint",
+      "value": "场景编辑建设中（M2 实现）"
+    }
+  ]
+}
